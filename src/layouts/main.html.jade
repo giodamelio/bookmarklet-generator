@@ -1,0 +1,28 @@
+doctype 5
+html
+    head
+        title Bookmarklet Generator
+
+        //- Bootstrap CSS
+        link(href="bootstrap/css/bootstrap.min.css", rel="stylesheet")
+
+        //- Font Awesome CSS
+        link(href="font-awesome/css/font-awesome.min.css", rel="stylesheet")
+
+        //- My CSS
+        link(href="main.css", rel="stylesheet")
+
+        //- jQuery
+        script(src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js", type="text/javascript")
+
+        //- Bootstrap JS
+        script(src="bootstrap/js/bootstrap.min.js", type="text/javascript")
+
+        //- To load livereload code
+        != getBlock("scripts").toHTML()
+    body
+        div.navbar.navbar-inverse.navbar-fixed-top
+            div.container
+                div.navbar-header
+                    a.navbar-brand(href="/") Bookmarklet Generator
+        div.container!= content

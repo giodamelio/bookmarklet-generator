@@ -19,9 +19,9 @@ div.row
                 div.col-lg-3
                     b Language
                 div.col-lg-9
-                    input#languageJavascript.gap(type="radio", name="optionsRadios", value="option1", checked="checked")
+                    input#languageJavascript.gap(type="radio", name="language", checked="checked")
                     b.double-gap Javascript
-                    input#languageCoffeescript.gap(type="radio", name="optionsRadios", value="option1")
+                    input#languageCoffeescript.gap(type="radio", name="language")
                     b Coffeescript
             div.row.bottom-gap
                 div.col-lg-3
@@ -30,10 +30,10 @@ div.row
                     input#includeJquery.gap(type="checkbox", value="option1")
                     b(style="display: inline;") Version
                 div.col-lg-7
-                    select.form-control(style="margin-left: 5px;")
+                    select#jqueryVersion.form-control(style="margin-left: 5px;")
                         option 1.10.2
                         option 1.9.1
-                        option 2.0.3 (No IE 6/7/8 Support)
+                        option 2.0.3
             div.row.bottom-gap
                 div.col-lg-3
                     b Minify
@@ -44,6 +44,10 @@ div.row
                     b Name
                 div.col-lg-9
                     input#name.form-control(type="text", placeholder="Awesome Bookmarklet")
-            div.row
+            div.row.bottom-gap
                 div.col-lg-12
                     button#generate.btn.btn-success Generate
+        div#outputContainer(style="display: none")
+            hr
+            a#output.gap(href="#") Nothing
+            b <-- Drag this to your bookmarks

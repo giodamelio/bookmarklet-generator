@@ -1,5 +1,49 @@
 --- yaml
 layout: "main"
 ---
-b Hello World
-i.icon-asterisk
+//- Codemirror CSS
+link(href="code-mirror/codemirror.css", rel="stylesheet")
+//- Codemirror JS
+script(src="code-mirror/codemirror.js", type="text/javascript")
+//- My JS
+script(src="main.js", type="text/javascript")
+
+div.row
+    div.col-lg-8.col-lg-offset-2
+        h3 A tool to help make bookmarklets
+        br
+        div#code
+        br
+        div.container
+            div.row.bottom-gap
+                div.col-lg-3
+                    b Language
+                div.col-lg-9
+                    input#languageJavascript.gap(type="radio", name="optionsRadios", value="option1", checked="checked")
+                    b.double-gap Javascript
+                    input#languageCoffeescript.gap(type="radio", name="optionsRadios", value="option1")
+                    b Coffeescript
+            div.row.bottom-gap
+                div.col-lg-3
+                    b Include jQuery
+                div.col-lg-2
+                    input#includeJquery.gap(type="checkbox", value="option1")
+                    b(style="display: inline;") Version
+                div.col-lg-7
+                    select.form-control(style="margin-left: 5px;")
+                        option 1.10.2
+                        option 1.9.1
+                        option 2.0.3 (No IE 6/7/8 Support)
+            div.row.bottom-gap
+                div.col-lg-3
+                    b Minify
+                div.col-lg-9
+                    input#minify(type="checkbox", value="option1", checked="checked")
+            div.row.bottom-gap
+                div.col-lg-3
+                    b Name
+                div.col-lg-9
+                    input#name.form-control(type="text", placeholder="Awesome Bookmarklet")
+            div.row
+                div.col-lg-12
+                    button#generate.btn.btn-success Generate
